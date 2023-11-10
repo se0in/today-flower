@@ -1,21 +1,28 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom';
 // import styled from 'styled-components';
-import Main from './components/Main'
-import Header from './components/Header'
+// import Header from './components/Header'
+
 import './scss/global/_Reset.scss';
 import './scss/global/_Common.scss';
-// import './scss/global/_Mixin.scss';
 import './scss/global/_Variables.scss';
 import './scss/App.scss'
 
-
+import Header from './components/Header';
+import Main from './components/Main'
+import Search from './components/Search';
 
 
 function App() {
-  return(
+  return (
     <div className="App">
-      <Header ></Header>
-      <Main/>
+      <Header />
+      <div className='content'>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+      </div>
     </div>
   )
 }
