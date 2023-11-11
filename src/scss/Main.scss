@@ -1,0 +1,50 @@
+.main {
+  position: relative;
+  .todayTextWrap {
+    .today {
+      margin-bottom: 15px;
+    }
+    .title {
+      font-size: 30px;
+      margin-bottom: 6px;
+    }
+    .flowerName {
+      font-size: 50px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .flowerLang {
+      font-size: 16px;
+    }
+  }
+  .todayImgWrap {
+    background-color: rgb(37, 37, 37);
+    height: calc(100vh - 440px);
+    min-height: 250px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+  }
+  .todayMoreBtn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 140px);
+    max-width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #559B63;
+    .icon {
+      font-size: 20px;
+      position: absolute;
+      right: 20px;
+    }
+  }
+  .themeWrap {
+    text-align: right;
+    margin-top: 20px;
+  }
+}

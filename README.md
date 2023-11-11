@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# 임시 readme 
+- 컴포넌트 순서
+```javascript
+<BrowserRouter> //react-router-dom을 감싸는 최상단
+      <ThemeProvider theme={themeMode}> //styled-components 스타일을 전역적으로 공유. ThemeProvider로 감싼 하위들은 모두 theme props를 사용할 수 있다.
+        <GlobalStyle /> //reset할 스타일과 styled-components 정의해서 글로벌로 사용 (지우면 동작 안함)
+        <div className="App"> //.App
+          <Header /> 
+          <div className="content"> //Header가 fixed라 content 위로 여백 넣음
+            <Routes> //Router 동작 될 부분
+              <Route
+                path="/"
+                element={
+                  <Main toggleTheme={toggleTheme} themeMode={themeMode} />
+                }
+              />
+              //Main안에 ThemeBtn 컴포넌트가 있는데 테마를 바꿔줄 버튼이라 Props 전달
+              <Route path="/search" element={<Search />} />
+              // 주소/search에 보여질 부분
+            </Routes>
+          </div>
+        </div>
+      </ThemeProvider>
+    </BrowserRouter>
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 뒤로가기 이벤트 만드는 법(짱쉬움)
+```javascript
+//라우터 라이브러리 제공
+import { useNavigate } from "react-router-dom";
+// 훅
+const navigate = useNavigate()
+// 클릭할 곳에 넣기만 하면 됨 (-1 = 뒤로 한 번 가기)
+<HeaderButton className="back" onClick={()=>{navigate(-1)}}>
+```
 
-## Available Scripts
+- 위치하는 페이지에 따라 헤더 아이콘 다르게 띄우기
+- 로고는 메인에서만, 그 외의 페이지에선 뒤로가기 아이콘을 띄워야 하는 상황
+```javascript
+import { Link, useLocation } from "react-router-dom";
+const location = useLocation();
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+//함수 
+const renderHeaderLeft = () => {
+    if(location.pathname === '/') { ///루트일 때 표시할 아이콘
+      return(
+        <Link to="/">
+          <img
+            className="logo"
+            src={process.env.PUBLIC_URL + "./images/logo.svg"}
+            alt="logo"
+          />
+        </Link>
+      )
+    }else{ //그 외 페이지일 경우
+      return(
+        <HeaderButton className="back" onClick={()=>{navigate(-1)}}>
+          <IoIosArrowBack className="icon" />
+        </HeaderButton>
+      )
+    }
+  }
+  //...생략
+  //함수만 넣어주면 된다.
+  <div className="headerLeft">
+    {renderHeaderLeft()}
+  </div>
+```
