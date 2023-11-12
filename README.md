@@ -97,3 +97,13 @@ import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
   )}
   //...생략 위와 같이 하단에 date부분도 만들면 됨
 ```
+
+-env에 환경변수 넣는 법
+1. server/server.js는 src 안에 있어야 한다
+  - 최상단루트에 놓았더니 "프로젝트 디렉토리 외부에 있는 모듈을 상대 경로로 import하려고 시도했을 때 발생"하는 오류가 뜸
+2. env파일은 최상단 루트(package.json와 동일한 위치)에 있어야 한다 
+- REACT_APP_API_KEY = 키코드
+  변수 선언 않고 바로 입력
+  "",''로 묶을 필요 없다.
+  ;(세미콜론)이나 ,(쉼표) 넣기 않기
+  변수명 앞에는 REACT_APP_이 꼭 붙어야 한다.

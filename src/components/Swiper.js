@@ -1,13 +1,15 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import Pagination from "swiper";
 import 'swiper/css';
 import 'swiper/scss/pagination';
 import 'swiper/css/effect-cards';
 import '../scss/Swiper.scss'
 import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
 
-export const MainSwiper = () => {
+
+export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
+  const imagesData = [imgSrc1, imgSrc2, imgSrc3]
+
   return (
     <>
       <Swiper
@@ -20,22 +22,34 @@ export const MainSwiper = () => {
           rotate: true,
         }}
         autoplay={{
-          delay: 30000, 
+          delay: 3000, 
           disableOnInteraction: false
         }}
         pagination={{
           clickable: true,
         }}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
+        {
+          imagesData.map((img , idx) => {
+            return (
+              <SwiperSlide key={idx}>
+                <img
+                src={img}
+                alt={flowerName}
+                >
+                </img>
+              </SwiperSlide>
+            )
+          })
+        }
       </Swiper>
     </>
   );
 }
 
-export const DetailSwiper = () => {
+export const DetailSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
+  const imagesData = [imgSrc1, imgSrc2, imgSrc3]
+
   return(
     <>
       <Swiper 
@@ -53,6 +67,20 @@ export const DetailSwiper = () => {
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
+        {/* {
+          imagesData.map((img , idx) => {
+            console.log('idx: ', idx);
+            return (
+              <SwiperSlide key={idx}>
+                <img
+                src={img}
+                alt={flowerName}
+                >
+                </img>
+              </SwiperSlide>
+            )
+          })
+        } */}
       </Swiper>
     </>
   );

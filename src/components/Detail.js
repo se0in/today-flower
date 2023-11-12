@@ -1,8 +1,9 @@
 import React from "react";
 import { DetailFlowerLang, FlowerEtcList, PointText, Source, SubText } from "../theme/globalStyle";
-import { FcAbout, FcCloseUpMode, FcGlobe, FcLandscape, FcLike, FcStackOfPhotos } from "react-icons/fc";
+import { FcAbout, FcCloseUpMode, FcGlobe, FcLandscape, FcStackOfPhotos } from "react-icons/fc";
 import '../scss/Detail.scss'
 import { DetailSwiper } from './Swiper';
+
 
 const Search = () => {
   return (

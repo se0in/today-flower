@@ -10,9 +10,24 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const LoadingBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  margin-top: 300px;
+  text-align: center;
+  color: #999;
+  .icon {
+    font-size: 30px;
+  }
+`
+
 export const PointText = styled.p`
   color: ${({ theme }) => theme.pointTextColor};
 `;
+
 export const SubText = styled.p`
   color: ${({ theme }) => theme.subTextColor};
   font-size: 16px;

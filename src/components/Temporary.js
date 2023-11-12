@@ -58,7 +58,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    {/* <div className="App">
       <h1>꽃 이름 : <span>{flowerName}</span></h1>
       <h2>꽃말 : <span>{flowerLang}</span></h2>
 
@@ -126,7 +126,7 @@ function App() {
     onClick={handleButtonClick}
     >검색</button>
 
-    </div>
+    </div> */}
   )
 }
 
