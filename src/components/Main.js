@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import { PointText, SubText } from "../theme/globalStyle";
 import ThemeBtn from "./ThemeBtn";
+import { MainSwiper } from './Swiper';
 
 function Main({ toggleTheme, themeMode }) {
   return (
@@ -14,7 +15,9 @@ function Main({ toggleTheme, themeMode }) {
         <PointText className="flowerName">민들레</PointText>
         <PointText className="flowerLang">: 행복과 감사하는 마음</PointText>
       </div>
-      <div className="todayImgWrap">{/* 스와이퍼 */}</div>
+      <div className="todayImgWrap">
+        <MainSwiper ></MainSwiper>
+      </div>
       <Link to="/detail">
         <button className="todayMoreBtn">
           <span>오늘의 꽃 정보</span>

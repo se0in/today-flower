@@ -2,26 +2,43 @@
 export const lightTheme = {
   bgColor : '#FBFBFB',
   textColor : '#101010',
-  btnColor : '#EDEDED',
-  inputColor : '#F8F8F8',
+  btnColor : '#eee',
+  inputColor : '#F0F0F0',
   pointTextColor : '#559B63',
   subTextColor : '#999',
-  buttonTextThemeChange: '낮'
+  buttonTextThemeChange: 'light mode',
+  btnThemeBg : '#ccc',
+  btnCircleColor : '#fff',
+  btnCirclePositionLeft : '4px',
+  btnCirclePositionRight : 'none',
+  flowerLangBorder : '1px solid #EBEBEB',
+  flowerLangBg : '#FFFFFF',
+  sourceTextColor : '#ccc',
+  searchItemBorder : '1px solid #F2F2F2',
+  searchItemBg : '#FFF',
 }
 
 export const darkTheme = {
   bgColor : '#161716',
   textColor : '#FFFFFF',
   btnColor : '#333333',
-  inputColor : '#0F0F0F',
+  inputColor : '#222222',
   pointTextColor : '#559B63',
   subTextColor : '#999',
-  buttonTextThemeChange: '밤'
+  buttonTextThemeChange: 'dark mode',
+  btnThemeBg : '#1B84ED',
+  btnCircleColor : '#fff',
+  btnCirclePositionLeft : 'none',
+  btnCirclePositionRight : '4px',
+  flowerLangBorder : 'none',
+  flowerLangBg : '#333333',
+  sourceTextColor : '#999',
+  searchItemBorder : 'none',
+  searchItemBg : '#222222',
 }
 
 export const theme = {
   lightTheme,
   darkTheme,
-  
 }
 

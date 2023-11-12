@@ -1,0 +1,27 @@
+.detail {
+  .today {
+    margin-bottom: 15px;
+  }
+  .flowerName {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+    .koreaName {
+      font-size: 35px;
+    }
+    .EnglishName {
+      font-size: 16px;
+    }
+  }
+  .todayImgWrap {
+    width: 100%;
+    height: calc(100vw - 40px);
+    max-height: 500px;
+    max-width: 500px;
+    background-color: #ddd;
+    border-radius: 38px;
+    overflow: hidden;
+  }
+}

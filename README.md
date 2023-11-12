@@ -66,3 +66,34 @@ const renderHeaderLeft = () => {
     {renderHeaderLeft()}
   </div>
 ```
+
+- 리액트 스와이퍼 모듈 필수 연결
+```javascript
+//필수 불러오시
+import 'swiper/scss/pagination';
+//모듈 연결
+import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
+// 코드 내 모듈에도 작성
+  modules={[EffectCards, Pagination, Autoplay]}
+```
+
+- 버튼에 따라 다른 input 나오는 법
+```javascript
+//useState 사용
+  const handleButtonClick = (type) => {
+    setSearchType(type);
+  };
+  // 버튼 만들고 각각 인자 입력
+  <button onClick={() => handleButtonClick("name")}>꽃 이름</button>
+  <button onClick={() => handleButtonClick("date")}>날짜</button>
+  //클릭 시 노출할 영역에 작성
+  {searchType === "name" && (
+    <SearchInputBox>
+      <input type="text" placeholder="꽃 이름을 검색해주세요" />
+      <button className='SearchBtn'>
+        <BiSearch className='icon'/>
+      </button>
+    </SearchInputBox>
+  )}
+  //...생략 위와 같이 하단에 date부분도 만들면 됨
+```

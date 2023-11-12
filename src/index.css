@@ -34,16 +34,43 @@ img {
   display: block;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: inherit;
 }
 
+input {
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+input::placeholder {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select {
+  border: none;
+  outline: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 button {
-  background: none;
   border: none;
   outline: none;
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
+  background: none;
 }
