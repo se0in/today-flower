@@ -41,7 +41,7 @@ import { Link, useLocation } from "react-router-dom";
 const location = useLocation();
 
 //함수 
-const renderHeaderLeft = () => {
+const renderHeaderIcons = () => {
     if(location.pathname === '/') { ///루트일 때 표시할 아이콘
       return(
         <Link to="/">
@@ -62,8 +62,8 @@ const renderHeaderLeft = () => {
   }
   //...생략
   //함수만 넣어주면 된다.
-  <div className="headerLeft">
-    {renderHeaderLeft()}
+  <div className="headerIcons">
+    {renderHeaderIcons()}
   </div>
 ```
 

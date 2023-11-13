@@ -10,12 +10,14 @@ import Loading from './Loading';
 
 function Main({ toggleTheme, themeMode }) {
   /* 데이터 가져옴 */
-  const [currentDate, setCurrentDate] = useState("");
-  const [flowerName, setFlowerName] = useState("");
-  const [flowerLang, setFlowerLang] = useState("");
-  const [flowerImg1, setFlowerImg1] = useState("");
-  const [flowerImg2, setFlowerImg2] = useState("");
-  const [flowerImg3, setFlowerImg3] = useState("");
+  const [flowerData, setFlowerData] = useState({
+    currentDate : "",
+    flowerName : "",
+    flowerLang : "",
+    flowerImg1 : "",
+    flowerImg2 : "",
+    flowerImg3 : "",
+  })
   // 로딩 중
   const [loading, setLoading] = useState(true);
 
@@ -31,17 +33,19 @@ function Main({ toggleTheme, themeMode }) {
     const day = String(now.getDate()).padStart(2, "0");
 
     const formattedDate = `${month}월 ${day}일`;
-    setCurrentDate(formattedDate);
+    setFlowerData((dataList)=> ({...dataList, currentDate : formattedDate }));
 
     try{
       const data = await fetchData(month, day);
       if (data) {
-        setFlowerName(data.flowerName);
-        setFlowerLang(data.flowerLang);
-        setFlowerLang(data.flowerLang);
-        setFlowerImg1(data.flowerImgSrc1);
-        setFlowerImg2(data.flowerImgSrc2);
-        setFlowerImg3(data.flowerImgSrc3);
+        setFlowerData((dataList)=> ({
+          ...dataList,
+          flowerName : data.flowerName,
+          flowerLang : data.flowerLang,
+          flowerImg1 : data.flowerImgSrc1,
+          flowerImg2 : data.flowerImgSrc2,
+          flowerImg3 : data.flowerImgSrc3,
+        }))
       }
     }catch (error) {
       console.error("Error fetching data :", error);
@@ -59,17 +63,17 @@ function Main({ toggleTheme, themeMode }) {
           ) : (
       <>
         <div className="todayTextWrap">
-          <SubText className="today">{currentDate}</SubText>
+          <SubText className="today">{flowerData.currentDate}</SubText>
           <p className="title">오늘의 꽃은</p>
-              <PointText className="flowerName">{flowerName}</PointText>
-              <PointText className="flowerLang">: {flowerLang}</PointText>
+              <PointText className="flowerName">{flowerData.flowerName}</PointText>
+              <PointText className="flowerLang">: {flowerData.flowerLang}</PointText>
         </div>
         <div className="todayImgWrap">
           <MainSwiper
-          imgSrc1={flowerImg1}
-          imgSrc2={flowerImg2}
-          imgSrc3={flowerImg3}
-          flowerName={flowerName}
+          imgSrc1={flowerData.flowerImg1}
+          imgSrc2={flowerData.flowerImg2}
+          imgSrc3={flowerData.flowerImg3}
+          flowerName={flowerData.flowerName}
           />
         </div>
         <Link to="/detail">

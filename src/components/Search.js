@@ -6,7 +6,7 @@ import SearchList from './SearchList';
 import DateSelect from './DateSelect';
 
 const Search = () => {
-  const [searchTerm, SetSearchTerm] = useState("");
+  const [searchTerm, SetSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState(null);
   /* 버튼에 따라 다른 검색창 표시 : 기본값은 name 검색*/
   //useState Hook 사용

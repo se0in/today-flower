@@ -14,7 +14,7 @@ function Header() {
 
   
 
-  const renderHeaderLeft = () => {
+  const renderHeaderIcons = () => {
     if(location.pathname === '/') {
       return(
         <Link to="/">
@@ -48,10 +48,10 @@ function Header() {
 
   return (
     <header id="header">
-      <div className="headerLeft">
-        {renderHeaderLeft()}
+      <div className="headerIcons">
+        {renderHeaderIcons()}
       </div>
-      <div className="headerRight">
+      <div className="headerSearch">
         {renderHeaderSearch()}
       </div>
     </header>

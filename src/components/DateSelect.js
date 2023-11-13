@@ -11,27 +11,19 @@ const DateSelect = () => {
 
   const daysInMonth = (month, year) => {
     //2월 윤달 29일 항상 표시
-    if (month === 2) {
-      return 29;
-    }
+    if (month === 2) return 29;
     return new Date(year, month, 0).getDate();
   };
 
   const handleChangeMonth = (e) => {
     const selectedMonth = e.target.value;
     setSelectMonth(selectedMonth);
-    /* 월 선택했다면 일 전체로 보이도록  */
-    if (selectedMonth === "월 선택") {
-      setSelectDay("일 선택");
-    } else {
-      setSelectDay("전체");
-    }
+    /* 월 선택했다면 일 전체로 보이도록 */
+    selectedMonth === "월 선택" ? setSelectDay("일 선택") : setSelectDay("전체");
   };
 
-  const handleChangeDay = (e) => {
-    /* 문자열 parseInt 이용하여 정수로 반환 */
-    setSelectDay(parseInt(e.target.value, 10));
-  };
+  /* 문자열 parseInt 이용하여 정수로 반환 */
+  const handleChangeDay = (e) => setSelectDay(parseInt(e.target.value, 10));
 
   return (
     <>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./index.css";
 import "./scss/App.scss";
@@ -25,26 +25,24 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={themeMode}>
-        <GlobalStyle />
-        <div className="App">
-          <Header />
-          <div className="content">
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <Main toggleTheme={toggleTheme} themeMode={themeMode} />
-                }
-              />
-              <Route path="/search" element={<Search />} />
-              <Route path="/detail" element={<Detail />} />
-            </Routes>
-          </div>
+    <ThemeProvider theme={themeMode}>
+      <GlobalStyle />
+      <div className="App">
+        <Header />
+        <div className="content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main toggleTheme={toggleTheme} themeMode={themeMode} />
+              }
+            />
+            <Route path="/search" element={<Search />} />
+            <Route path="/detail" element={<Detail />} />
+          </Routes>
         </div>
-      </ThemeProvider>
-    </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 export default App;
