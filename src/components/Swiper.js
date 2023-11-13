@@ -47,8 +47,8 @@ export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
   );
 }
 
-export const DetailSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
-  const imagesData = [imgSrc1, imgSrc2, imgSrc3]
+export const DetailSwiper = () => {
+  // const imagesData = [imgSrc1, imgSrc2, imgSrc3]
 
   return(
     <>

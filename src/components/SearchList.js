@@ -1,13 +1,20 @@
 import React from 'react';
 import { SearchItem } from '../theme/globalStyle';
 
-const SearchList = () => {
+const SearchList = ({data}) => {
+  const {date, name, flowerImgSrc1} = data;
+  
   return(
     <SearchItem>
-      <div className="img"></div>
+      {flowerImgSrc1 && (
+        <div
+          className="img"
+          style={{ backgroundImage: `url(${flowerImgSrc1})` }}
+        ></div>
+      )}
       <div className="text">
-        <span className='date'>11월 8일</span>
-        <span className='name'>민들레</span>
+        <span className='date'>{date}</span>
+        <span className='name'>{name}</span>
       </div>
     </SearchItem>
   );
