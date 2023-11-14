@@ -121,3 +121,5 @@ react의 `<select>` 요소의 `value` 속성은 문자열을 반환한다. (HTML
     return new Date(year, month, 0).getDate();
   };
 ```
+
+-갑자기 서버가 끊기고 영 이상하다면 오류 넘버보고 공문서 확인 : 오늘의 경우 일일 트래픽 초과!
