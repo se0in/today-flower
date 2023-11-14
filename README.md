@@ -107,3 +107,17 @@ import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
   "",''로 묶을 필요 없다.
   ;(세미콜론)이나 ,(쉼표) 넣기 않기
   변수명 앞에는 REACT_APP_이 꼭 붙어야 한다.
+
+
+- 검색 페이지 2월 윤달 
+react의 `<select>` 요소의 `value` 속성은 문자열을 반환한다. (HTML에서 `<select>` 요소의 `value` 속성이 문자열이어야 하기 때문)
+리액트는 ===를 권장하기 때문에 2월에 29일을 추가하려면 문자형으로 비교해야 한다.
+```javascript
+ const daysInMonth = (month, year) => {
+    if (month === "2") {
+      console.log('month: ', month);
+      return 29;
+    }
+    return new Date(year, month, 0).getDate();
+  };
+```

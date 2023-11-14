@@ -134,7 +134,7 @@ export const SearchInputBox = styled.div`
   align-items: center;
   gap: 10px;
   input {
-    flex: 1;
+    width: 100%;
     border-radius: 18px;
     height: 50px;
     padding: 10px 20px;
@@ -165,13 +165,13 @@ export const SearchInputBox = styled.div`
   }
 `;
 
-export const SearchItem = styled.li`
+export const SearchItem = styled.div`
   display: flex;
   gap: 18px;
   align-items: center;
   flex-direction: row;
   padding: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-sizing: border-box;
   border-radius: 20px;
   border: ${({ theme }) => theme.searchItemBorder};

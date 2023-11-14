@@ -13,7 +13,7 @@ const fetchData = async (month, day) => {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, "text/xml");
 
-      const id = xmlDoc.querySelector('dataNo');
+
       const month = xmlDoc.querySelector('fMonth');
       const day = xmlDoc.querySelector('fDay');
       const flowerLang = xmlDoc.querySelector('flowLang');
@@ -27,10 +27,10 @@ const fetchData = async (month, day) => {
       const fType = xmlDoc.querySelector('fType');
       const publishOrg = xmlDoc.querySelector('publishOrg');
       
-      console.log(id,month,day,flowerLang,flowerName,flowerImg1,flowerImg2,flowerImg3,publishOrg);
+      console.log(month,day,flowerLang,flowerName,flowerImg1,flowerImg2,flowerImg3,publishOrg);
       console.log(fUse,fContent,fGrow,fType);
 
-      if (flowerLang && flowerName ) {
+      if (month) {
         return { 
           flowerName: flowerName.textContent, 
           flowerLang: flowerLang.textContent,

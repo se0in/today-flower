@@ -1,8 +1,9 @@
 import React from "react";
-import { DetailFlowerLang, FlowerEtcList, PointText, Source, SubText } from "../theme/globalStyle";
+import { DetailFlowerLang, PointText, Source, SubText } from "../theme/globalStyle";
 import { FcAbout, FcCloseUpMode, FcGlobe, FcLandscape, FcStackOfPhotos } from "react-icons/fc";
 import '../scss/Detail.scss'
 import { DetailSwiper } from './Swiper';
+import DetailList from './DetailList';
 
 
 const Search = () => {
@@ -29,38 +30,18 @@ const Search = () => {
         <p>행복과 감사하는 마음</p>
       </DetailFlowerLang>
       <ul className="FlowerEtc">
-        {/* 내용 */}
-        <FlowerEtcList>
-          <FcAbout className='icon'/>
-          <div>
-            <span className='title'>내용</span>
-            <p>내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳</p>
-          </div>
-        </FlowerEtcList>
-        {/* 이용 */}
-        <FlowerEtcList>
-          <FcStackOfPhotos className='icon'/>
-          <div>
-            <span className='title'>이용</span>
-            <p>내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳</p>
-          </div>
-        </FlowerEtcList>
-        {/* 기르기 */}
-        <FlowerEtcList>
-          <FcLandscape className='icon'/>
-          <div>
-            <span className='title'>기르기</span>
-            <p>내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳</p>
-          </div>
-        </FlowerEtcList>
-        {/* 자생지 */}
-        <FlowerEtcList>
-          <FcGlobe className='icon'/>
-          <div>
-            <span className='title'>자생지</span>
-            <p>내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳내용 들어갈 곳</p>
-          </div>
-        </FlowerEtcList>
+        <DetailList title="내용" text="긴 글 내용 쏼라쏼라">
+          <FcAbout className='icon' />
+        </DetailList>
+        <DetailList title="이용" text="이용방법 쏼라쏼라">
+          <FcStackOfPhotos className='icon' />
+        </DetailList>
+        <DetailList title="기르기" text="기르는 법 쏼라쏼라">
+          <FcLandscape className='icon' />
+        </DetailList>
+        <DetailList title="자생지" text="자생지 쏼라쏼라">
+          <FcGlobe className='icon' />
+        </DetailList>
       </ul>
       {/* 출처 */}
       <Source>
