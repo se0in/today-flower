@@ -47,8 +47,8 @@ export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
   );
 }
 
-export const DetailSwiper = () => {
-  // const imagesData = [imgSrc1, imgSrc2, imgSrc3]
+export const DetailSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
+  const imagesData = [imgSrc1, imgSrc2, imgSrc3]
 
   return(
     <>
@@ -64,12 +64,8 @@ export const DetailSwiper = () => {
       }}
       loop={true}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        {/* {
+        {
           imagesData.map((img , idx) => {
-            console.log('idx: ', idx);
             return (
               <SwiperSlide key={idx}>
                 <img
@@ -80,7 +76,7 @@ export const DetailSwiper = () => {
               </SwiperSlide>
             )
           })
-        } */}
+        }
       </Swiper>
     </>
   );

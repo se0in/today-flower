@@ -91,9 +91,10 @@ export const DetailFlowerLang = styled.div`
 export const FlowerEtcList = styled.li`
   display: flex;
   gap: 10px;
-  margin-top: 40px;
+  margin-top: 70px;
   .icon {
     font-size: 30px;
+    min-width: 25px;
   }
   div {
     display: flex;
@@ -102,10 +103,10 @@ export const FlowerEtcList = styled.li`
     margin-top: 8px;
     .title {
       color: #999999;
-      font-size: 15px;
+      font-size: 17px;
     }
     p {
-      line-height: 1.3;
+      line-height: 1.6;
     }
   }
 `;
@@ -180,7 +181,7 @@ export const SearchItem = styled.div`
     width: 64px;
     height: 64px;
     border-radius: 20px;
-    background-color: #999;
+    background-color: #ccc
   }
   .text {
     display: flex;

@@ -12,9 +12,11 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [flowerData, setFlowerData] = useState({
+    id:"",
     flowerName: "",
     flowerImg1: "",
     flowerMonth: "",
+    flowerDay: "",
   })
   useEffect(() => {
   }, []);
@@ -59,8 +61,8 @@ const Search = () => {
             flowerMonth: data.flowerMonth,
             flowerDay: data.flowerDay,
             flowerImg1: data.flowerImgSrc1,
-            flowerImg2: data.flowerImgSrc2,
-            flowerImg3: data.flowerImgSrc3,
+            // flowerImg2: data.flowerImgSrc2,
+            // flowerImg3: data.flowerImgSrc3,
           });
           setSearchResult([data]); // 검색 결과 설정
         }
@@ -115,8 +117,8 @@ const Search = () => {
       {!loading ? (
         searchResult && Array.isArray(searchResult) ? (
           <div>
-            {searchResult.map((item, index) => (
-              <SearchList key={index} data={item} />
+            {searchResult.map((item) => (
+              <SearchList key={item.id} data={item} />
             ))}
           </div>
         ) : (
