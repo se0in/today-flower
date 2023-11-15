@@ -4,15 +4,16 @@ import { BiSearch } from "react-icons/bi";
 import '../scss/Search.scss'
 import SearchList from './SearchList';
 import DateSelect from './DateSelect';
-import { fetchData } from '../server/server';
+import { fetchData, fetchDataName } from '../server/server';
+import Loading from './Loading';
 
-const Search = () => {
+const Search = ({data}) => {
   const [searchResult, setSearchResult] = useState(null);
-  const [searchType, setSearchType] = useState("date");
+  const [searchType, setSearchType] = useState("name");
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [flowerData, setFlowerData] = useState({
-    id:"",
+    id: "",
     flowerName: "",
     flowerImg1: "",
     flowerMonth: "",
@@ -21,23 +22,58 @@ const Search = () => {
   useEffect(() => {
   }, []);
 
-
-
   /* 버튼 바꾸기 */
   const handleButtonClick = (type) => {
     setSearchType(type);
     setSearchResult(null);
+
   };
 
+  console.log(searchTerm);
+  const handleNameSearch = async () => {
+    try {
+      const data = await fetchDataName(searchTerm);
+  
+      if (data && Array.isArray(data.flowerName)) {
+/*         const searchData = data.flowerName.map((name, index) => ({
+          id: index,
+          flowerName: name,
+          month: data.month[index],
+          day: data.day[index],
+          flowerImgSrc1: data.flowerImg1[index],
+          
+        })); */
+  
+        setFlowerData({
+          ...flowerData,
+            flowerName: data.flowerName,
+            flowerLang: data.flowerLang,
+            flowerMonth: data.flowerMonth,
+            flowerDay: data.flowerDay,
+            flowerImg1: data.flowerImgSrc1,
+        });
+        setSearchResult([data]);
+  
+        console.log('flowerLanguage: ', data.flowerLang);
+      } else {
+        setSearchResult([]);
+      }
+    } catch (error) {
+      console.error('데이터를 불러오는 중 오류 발생:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  // 날짜 검색
+  const handleDateSearch = async (selectedDates) => {
 
-  const handleSearch = async (selectedDates) => {
     if (Array.isArray(selectedDates)) {
       // 여러 날짜의 배열 처리
       try {
         const promises = selectedDates.map(async (dateString) => {
           const [month, day] = dateString.split('-').map(Number);
-          return fetchData(month, day, searchTerm);
+          return fetchData(month, day);
         });
 
         const searchData = await Promise.all(promises);
@@ -51,7 +87,7 @@ const Search = () => {
       // 단일 날짜 처리
       const [month, day] = selectedDates.split('-').map(Number);
       try {
-        const data = await fetchData(month, day, searchTerm);
+        const data = await fetchData(month, day);
         if (data) {
           // 단일 날짜의 데이터 처리
           setFlowerData({
@@ -61,8 +97,6 @@ const Search = () => {
             flowerMonth: data.flowerMonth,
             flowerDay: data.flowerDay,
             flowerImg1: data.flowerImgSrc1,
-            // flowerImg2: data.flowerImgSrc2,
-            // flowerImg3: data.flowerImgSrc3,
           });
           setSearchResult([data]); // 검색 결과 설정
         }
@@ -98,7 +132,7 @@ const Search = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className='SearchBtn' onClick={handleSearch} >
+          <button className='SearchBtn' onClick={handleNameSearch} >
             <BiSearch className='icon' />
           </button>
         </SearchInputBox>
@@ -108,30 +142,27 @@ const Search = () => {
       {/* 월별 마지막 날 다르게 설정 */}
       {searchType === "date" && (
         <SearchInputBox>
-          <DateSelect handleSearch={handleSearch} />
+          <DateSelect handleSearch={handleDateSearch} />
         </SearchInputBox>
       )}
 
       {/* 검색 결과 */}
+
       <span className='result'>검색 결과</span>
-      {!loading ? (
-        searchResult && Array.isArray(searchResult) ? (
-          <div>
-            {searchResult.map((item) => (
-              <SearchList key={item.id} data={item} />
-            ))}
-          </div>
-        ) : (
-          <div className="none">
-            <img
-              src={process.env.PUBLIC_URL + './images/logo.svg'}
-              alt="logo" />
-            <p>검색 결과가 없습니다.</p>
-          </div>
-        )
+      {searchResult && Array.isArray(searchResult) ? (
+        <div>
+          {searchResult.map((item) => (
+            <SearchList key={item.id} data={item} />
+          ))}
+
+        </div>
       ) : (
-        // 로딩 중 표시
-        <p>로딩 중...</p>
+        <div className="none">
+          <img
+            src={process.env.PUBLIC_URL + './images/logo.svg'}
+            alt="logo" />
+          <p>검색 결과가 없습니다.</p>
+        </div>
       )}
     </div>
   );
