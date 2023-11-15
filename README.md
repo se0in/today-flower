@@ -1,7 +1,7 @@
 # 임시 readme 
 - 컴포넌트 순서
 ```javascript
-<BrowserRouter> //react-router-dom을 감싸는 최상단
+<BrowserRouter> //react-router-dom을 감싸는 최상단 => index.js App바깥으로 옮김!!!!!!
       <ThemeProvider theme={themeMode}> //styled-components 스타일을 전역적으로 공유. ThemeProvider로 감싼 하위들은 모두 theme props를 사용할 수 있다.
         <GlobalStyle /> //reset할 스타일과 styled-components 정의해서 글로벌로 사용 (지우면 동작 안함)
         <div className="App"> //.App
