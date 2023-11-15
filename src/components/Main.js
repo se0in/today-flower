@@ -25,12 +25,12 @@ function Main({ toggleTheme, themeMode }) {
     // 서버에서 데이터 가져오기
     getCurrentDate();
   }, []);
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, "0"); // 1월이 0으로 시작하므로 +1을 해줌
+  const day = String(now.getDate()).padStart(2, "0");
 
   const getCurrentDate = async () => {
     /* 날짜 월일 가져오기 */
-    const now = new Date();
-    const month = String(now.getMonth() + 1).padStart(2, "0"); // 1월이 0으로 시작하므로 +1을 해줌
-    const day = String(now.getDate()).padStart(2, "0");
 
     const formattedDate = `${month}월 ${day}일`;
     setFlowerData((dataList) => ({ ...dataList, currentDate: formattedDate }));
@@ -76,7 +76,7 @@ function Main({ toggleTheme, themeMode }) {
                 flowerName={flowerData.flowerName}
               />
             </div>
-            <Link to="/detail">
+            <Link to={`/detail/${month}/${day}`}>
               <button className="todayMoreBtn">
                 <span>오늘의 꽃 정보</span>
                 <FiArrowRight className="icon" />

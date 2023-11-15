@@ -21,6 +21,15 @@ export const LoadingBox = styled.div`
   color: #999;
   .icon {
     font-size: 30px;
+    animation: rotate 1s infinite linear;
+  }
+  @keyframes rotate {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
   }
 `
 

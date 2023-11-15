@@ -3,8 +3,9 @@ import { SearchItem } from "../theme/globalStyle";
 import { Link } from "react-router-dom";
 
 const SearchList = ({ data }) => {
-  console.log("data: ", data);
-  const { id, flowerName, flowerImgSrc1, month, day } = data || {};
+  console.log("da전돨디나/t 확인해a: ", data);
+  const { flowerName, flowerImgSrc1, month, day } = data || {};
+  console.log('data: ', data);
 
   return (
     <Link to={`/detail/${month}/${day}`}>

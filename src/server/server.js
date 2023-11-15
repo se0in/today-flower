@@ -31,7 +31,7 @@ const fetchDataName = async (searchTerm) => {
       console.log('flowerImg1: ', flowerImg1);
 
 
-      if (flowerNames && ids && month && day && flowerImg1) {
+      if (flowerNames && ids ) {
         const data = flowerNames.map((flowerName, index) => ({
           flowerName,
           id: ids[index],
