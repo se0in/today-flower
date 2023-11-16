@@ -49,5 +49,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://apis.data.go.kr"
+  "proxy": "http://apis.data.go.kr",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
