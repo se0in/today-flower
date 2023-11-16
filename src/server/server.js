@@ -49,42 +49,53 @@ const fetchDataName = async (searchTerm) => {
 };
 
 
-// 요청 주소 : 국립원예특작과학원 오늘의 꽃 정보 (오늘의 꽃, 날짜 검색, 상세 페이지 데이터)
+// 요청 주소 : 국립원예특작과학원 오늘의 꽃 정보 , 목록, 상세정보 (오늘의 꽃, 날짜 검색, 상세 페이지 데이터)
 const fetchData = async (month, day) => {
-  const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlower01?serviceKey=${API_KEY}&fMonth=${month}&fDay=${day}`;
+  // const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlower01?serviceKey=${API_KEY}&fMonth=${month}&fDay=${day}`;
+  
+  /* 트래픽 초과 시 대체할 url */
+  //주의 : 하단 url변수는 내용,이용,기르는 법 등을 제공하지 않는 api이니 테스트 용도로만 사용할 것
+  // const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01?serviceKey=${API_KEY}&fMonth=${month}&fDay=${day}`;
+
+  // 주의 하단의 url변수는 요청변수에 인덱스를 요하므로 테스트 용도로만 사용할 것
+  const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerView01?serviceKey=${API_KEY}&dataNo=1`;
 
   try {
     const response = await axios.get(url);
-
     if (response.status === 200) {
       const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(response.data, "text/xml");
-
+      /**
+       * @xmlDoc api 접속 불가 시 찍어볼 것 : xmlDoc
+       */
+      const xmlDoc = parser.parseFromString(response.data, "text/xml"); 
+    
       const extractField = (tagName) => (xmlDoc.querySelector(tagName) || '').textContent;
-
+    
       const data = {
-        id: extractField('dataNo'), /* id */
-        month: extractField('fMonth'), /* 월 */
-        day: extractField('fDay'), /* 일 */
-        flowerName: extractField('flowNm'), /* 이름(한글) */
-        flowerEng: extractField('fEngNm'), /* 이름(영어) */
-        flowerLang: extractField('flowLang'), /* 꽃말 */
-        flowerContent: extractField('fContent'), /* 내용 */
-        flowerUse: extractField('fUse'), /* 이용 */
-        flowerGrow: extractField('fGrow'), /* 기르기 */
-        flowerType: extractField('fType'), /* 자생지 */
-        flowerImgSrc1: extractField('imgUrl1'), /* 이미지1 */
-        flowerImgSrc2: extractField('imgUrl2'), /* 이미지2 */
-        flowerImgSrc3: extractField('imgUrl3'), /* 이미지3 */
-        publishOrg: extractField('publishOrg'), /* 출처 */
-      }
-
+        id: extractField('dataNo'),
+        month: extractField('fMonth'),
+        day: extractField('fDay'),
+        flowerName: extractField('flowNm'),
+        flowerEng: extractField('fEngNm'),
+        flowerLang: extractField('flowLang'),
+        flowerContent: extractField('fContent'),
+        flowerUse: extractField('fUse'),
+        flowerGrow: extractField('fGrow'),
+        flowerType: extractField('fType'),
+        flowerImgSrc1: extractField('imgUrl1'),
+        flowerImgSrc2: extractField('imgUrl2'),
+        flowerImgSrc3: extractField('imgUrl3'),
+        publishOrg: extractField('publishOrg'),
+      };
       const hasRequiredFields = data.flowerName || data.month;
+    
       if (!hasRequiredFields) {
-        // console.log('필수 필드 누락 혹은 잘못된 데이터, api 상태 확인');
+        console.log('필수 필드가 누락되었거나 잘못된 데이터입니다. API 상태를 확인해주세요.');
         return null;
       }
+    
       return data;
+    
 
     } else {
       console.log('데이터 불러오기 실패:', response.status);
