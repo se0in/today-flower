@@ -24,7 +24,7 @@
     </BrowserRouter>
 ```
 
-- 뒤로가기 이벤트 만드는 법(짱쉬움)
+- 뒤로가기 이벤트 만드는 법 (짱쉬움)
 ```javascript
 //라우터 라이브러리 제공
 import { useNavigate } from "react-router-dom";

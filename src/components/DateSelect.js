@@ -36,7 +36,6 @@ const DateSelect = ({ handleSearch }) => {
       const lastDayOfMonth = daysInMonth(selectMonth, new Date().getFullYear());
       const allDays = Array.from({ length: lastDayOfMonth }, (_, index) => `${selectMonth}-${index + 1}`);
       setIsAllDaysSelected(true);
-      console.log('전체 날짜: ', allDays);
       handleSearch(allDays);
     }
   };

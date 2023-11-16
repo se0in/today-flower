@@ -133,6 +133,10 @@ export const SearchMenu = styled.button`
   border-radius: 25px;
   color: #999;
   background-color: ${({ theme }) => theme.btnColor};
+  transition: .3s;
+  &:hover {
+    background-color: ${({ theme }) => theme.subColorHover};
+  }
   &.clicked {
     background-color: #5b9f68;
     color: #fff;
@@ -154,6 +158,7 @@ export const SearchInputBox = styled.div`
   }
   select {
     flex: 1;
+    cursor: pointer;
     height: 50px;
     box-sizing: border-box;
     padding: 10px 20px;
@@ -165,7 +170,14 @@ export const SearchInputBox = styled.div`
     padding: 10px 20px;
     border-radius: 18px;
     box-sizing: border-box;
-    background-color: ${({ theme }) => theme.pointTextColor};
+    background-color: #559B63;
+    transition: .3s;
+    &:hover {
+      background-color: #397946;
+    }
+    &:active {
+      background-color: #25572f;
+    }
 
     .icon {
       font-size: 24px;
@@ -177,15 +189,19 @@ export const SearchInputBox = styled.div`
 
 export const SearchItem = styled.div`
   display: flex;
+  flex-direction: row;
   gap: 18px;
   align-items: center;
-  flex-direction: row;
   padding: 24px;
   margin-bottom: 15px;
   box-sizing: border-box;
   border-radius: 20px;
   border: ${({ theme }) => theme.searchItemBorder};
   background-color: ${({ theme }) => theme.searchItemBg};
+  transition: .3s;
+  &:hover {
+    border: 1px solid #559B63;
+  }
   .img {
     width: 64px;
     height: 64px;

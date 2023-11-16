@@ -16,6 +16,7 @@ export const lightTheme = {
   sourceTextColor : '#ccc',
   searchItemBorder : '1px solid #F2F2F2',
   searchItemBg : '#FFF',
+  subColorHover : '#ddd'
 }
 
 export const darkTheme = {
@@ -33,8 +34,9 @@ export const darkTheme = {
   flowerLangBorder : 'none',
   flowerLangBg : '#333333',
   sourceTextColor : '#999',
-  searchItemBorder : 'none',
+  searchItemBorder : '1px solid #222222',
   searchItemBg : '#222222',
+  subColorHover : '#272727'
 }
 
 export const theme = {

@@ -1,19 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { HeaderButton } from "../theme/globalStyle";
 import "../scss/Header.scss";
 import { IoIosArrowBack } from "react-icons/io";
 import { BiSearch } from "react-icons/bi";
-import { Link, useLocation } from "react-router-dom";
-import { HeaderButton } from "../theme/globalStyle";
 
 function Header() {
-  //뒤로 가기 이벤트
   const navigate = useNavigate()
-  // 메인 : 로고 그 외 페이지는 뒤로 가기
   const location = useLocation();
-
   
-
   const renderHeaderIcons = () => {
     if(location.pathname === '/') {
       return(

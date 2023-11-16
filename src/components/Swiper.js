@@ -6,8 +6,7 @@ import 'swiper/css/effect-cards';
 import '../scss/Swiper.scss'
 import { EffectCards, Pagination, Autoplay } from 'swiper/modules';
 
-
-export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
+export const MainSwiper = ({ imgSrc1, imgSrc2, imgSrc3, flowerName }) => {
   const imagesData = [imgSrc1, imgSrc2, imgSrc3]
 
   return (
@@ -22,7 +21,7 @@ export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
           rotate: true,
         }}
         autoplay={{
-          delay: 3000, 
+          delay: 3000,
           disableOnInteraction: false
         }}
         pagination={{
@@ -30,12 +29,12 @@ export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
         }}
       >
         {
-          imagesData.map((img , idx) => {
+          imagesData.map((img, idx) => {
             return (
               <SwiperSlide key={idx}>
                 <img
-                src={img}
-                alt={flowerName}
+                  src={img}
+                  alt={flowerName}
                 >
                 </img>
               </SwiperSlide>
@@ -47,30 +46,30 @@ export const MainSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
   );
 }
 
-export const DetailSwiper = ({imgSrc1, imgSrc2, imgSrc3, flowerName}) => {
+export const DetailSwiper = ({ imgSrc1, imgSrc2, imgSrc3, flowerName }) => {
   const imagesData = [imgSrc1, imgSrc2, imgSrc3]
 
-  return(
+  return (
     <>
-      <Swiper 
-      pagination={{
-        clickable: true,
-      }} 
-      modules={[Pagination, Autoplay]} 
-      className="detailSwiper"
-      autoplay={{
-        delay: 3000, 
-        disableOnInteraction: false
-      }}
-      loop={true}
+      <Swiper
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination, Autoplay]}
+        className="detailSwiper"
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false
+        }}
+        loop={true}
       >
         {
-          imagesData.map((img , idx) => {
+          imagesData.map((img, idx) => {
             return (
               <SwiperSlide key={idx}>
                 <img
-                src={img}
-                alt={flowerName}
+                  src={img}
+                  alt={flowerName}
                 >
                 </img>
               </SwiperSlide>
