@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchData } from '../server/server';
 import { PointText, SubText } from "../theme/globalStyle";
@@ -25,7 +25,7 @@ function Main({ toggleTheme, themeMode }) {
   const day = String(now.getDate()).padStart(2, "0");
 
   //데이터 연결
-  const fetchFlowerData = async () => {
+  const fetchFlowerData = useCallback(async () => {
     const formattedDate = `${month}월 ${day}일`;
     setFlowerData((dataList) => ({ ...dataList, currentDate: formattedDate }));
 
@@ -46,10 +46,11 @@ function Main({ toggleTheme, themeMode }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [month, day]);
+  
   useEffect(() => {
     fetchFlowerData();
-  }, []);
+  }, [fetchFlowerData]);
 
 
   // 로딩

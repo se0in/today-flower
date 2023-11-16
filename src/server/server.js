@@ -55,10 +55,10 @@ const fetchData = async (month, day) => {
   
   /* 트래픽 초과 시 대체할 url */
   //주의 : 하단 url변수는 내용,이용,기르는 법 등을 제공하지 않는 api이니 테스트 용도로만 사용할 것
-  // const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01?serviceKey=${API_KEY}&fMonth=${month}&fDay=${day}`;
+  const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerList01?serviceKey=${API_KEY}&fMonth=${month}&fDay=${day}`;
 
   // 주의 하단의 url변수는 요청변수에 인덱스를 요하므로 테스트 용도로만 사용할 것
-  const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerView01?serviceKey=${API_KEY}&dataNo=1`;
+  // const url = `http://apis.data.go.kr/1390804/NihhsTodayFlowerInfo01/selectTodayFlowerView01?serviceKey=${API_KEY}&dataNo=1`;
 
   try {
     const response = await axios.get(url);
