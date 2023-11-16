@@ -1,4 +1,6 @@
 # 개인 프로젝트 : 오늘의 꽃 
+배포 링크 : seoin-today-flower.netlify.app  
+<br>
 react로 작업한 오늘의 꽃 (창작)
 <br>
 ## 📣 프로젝트 소개
