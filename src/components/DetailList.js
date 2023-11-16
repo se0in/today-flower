@@ -1,13 +1,13 @@
 import React from 'react';
 import { FlowerEtcList } from '../theme/globalStyle';
 
-const DetailList = (props) => {
+const DetailList = ({children, title, text}) => {
   return (
     <FlowerEtcList>
-      {props.children}
+      {children}
       <div>
-        <span className='title'>{props.title}</span>
-        <p>{props.text}</p>
+        <span className='title'>{title}</span>
+        <p>{text}</p>
       </div>
     </FlowerEtcList>
   )

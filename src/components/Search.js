@@ -7,7 +7,7 @@ import { SearchInputBox, SearchMenu } from "../theme/globalStyle";
 import "../scss/Search.scss";
 import { BiSearch } from "react-icons/bi";
 
-const Search = ({ data }) => {
+const Search = () => {
   const [searchResult, setSearchResult] = useState(null);
   const [searchType, setSearchType] = useState("name");
   const [searchTerm, setSearchTerm] = useState("");

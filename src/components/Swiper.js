@@ -20,6 +20,7 @@ export const MainSwiper = ({ imgSrc1, imgSrc2, imgSrc3, flowerName }) => {
         cardsEffect={{
           rotate: true,
         }}
+        loop={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false
