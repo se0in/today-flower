@@ -1,5 +1,5 @@
 # 개인 프로젝트 : 오늘의 꽃 
-✨ 링크 : <a href=["http://example.com/](https://seoin-today-flower.netlify.app/)" target="_blank">[example](https://seoin-today-flower.netlify.app/)</a> ✨  
+✨ 링크 : <a href=["http://example.com/](https://seoin-today-flower.netlify.app/)" target="_blank">바로가기</a> ✨  
 
 <br>
 react로 작업한 오늘의 꽃 (창작)
