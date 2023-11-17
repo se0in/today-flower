@@ -17,7 +17,7 @@ export const LoadingBox = styled.div`
   align-items: center;
   gap: 40px;
   width: 100%;
-  margin-top: 35%;
+  margin-top: 250px;
   text-align: center;
   color: #999;
   .icon {
