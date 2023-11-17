@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color : ${({ theme }) => theme.bgColor};
     color : ${({ theme }) => theme.textColor};
+    transition: .3s;
   }
 `;
 
@@ -16,7 +17,7 @@ export const LoadingBox = styled.div`
   align-items: center;
   gap: 40px;
   width: 100%;
-  margin-top: 300px;
+  margin-top: 35%;
   text-align: center;
   color: #999;
   .icon {
@@ -45,19 +46,16 @@ export const SubText = styled.p`
 export const ThemeButton = styled.button`
   background-color: ${({ theme }) => theme.btnThemeBg};
   color: ${({ theme }) => theme.textColor};
-  width: 38px;
-  height: 22px;
-  border-radius: 14px;
-  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius:50%;
+  border: 1px solid ${({theme})=> theme.btnThemeBorder};
+  transition: .2s;
+  &:hover {
+    transform: translateY(-2px);
+  }
   span {
-    width: 14px;
-    height: 14px;
-    background-color: ${({ theme }) => theme.btnCircleColor};
-    position: absolute;
-    top: 4px;
-    left: ${({ theme }) => theme.btnCirclePositionLeft};
-    right: ${({ theme }) => theme.btnCirclePositionRight};
-    border-radius: 50%;
+    vertical-align: -2px;
   }
 `;
 
@@ -73,6 +71,7 @@ export const ThemeText = styled.span`
   font-size: 14px;
   color: #999;
   margin-right: 10px;
+  color : ${({ theme }) => theme.ThemeTextColor}
 `;
 export const DetailFlowerLang = styled.div`
   display: flex;

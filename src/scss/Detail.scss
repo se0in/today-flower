@@ -1,4 +1,13 @@
 .detail {
+  animation: opacityContent 1s;
+  @keyframes opacityContent {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   .today {
     margin-bottom: 15px;
   }

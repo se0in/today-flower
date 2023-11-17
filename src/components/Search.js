@@ -125,6 +125,7 @@ const Search = () => {
           />
           <button
             className="SearchBtn"
+            disabled={!searchTerm.trim()}
             onClick={handleNameSearch}>
             <BiSearch className="icon" />
           </button>

@@ -7,7 +7,9 @@ export const lightTheme = {
   pointTextColor : '#559B63',
   subTextColor : '#999',
   buttonTextThemeChange: 'light mode',
-  btnThemeBg : '#ccc',
+  btnThemeBg : '#fff',
+  btnThemeBorder : '#F9C68B',
+  ThemeTextColor : '#FF941A',
   btnCircleColor : '#fff',
   btnCirclePositionLeft : '4px',
   btnCirclePositionRight : 'none',
@@ -16,7 +18,7 @@ export const lightTheme = {
   sourceTextColor : '#ccc',
   searchItemBorder : '1px solid #F2F2F2',
   searchItemBg : '#FFF',
-  subColorHover : '#ddd'
+  subColorHover : '#ddd',
 }
 
 export const darkTheme = {
@@ -28,6 +30,8 @@ export const darkTheme = {
   subTextColor : '#999',
   buttonTextThemeChange: 'dark mode',
   btnThemeBg : '#1B84ED',
+  btnThemeBorder : '#1B84ED',
+  ThemeTextColor : '#999',
   btnCircleColor : '#fff',
   btnCirclePositionLeft : 'none',
   btnCirclePositionRight : '4px',

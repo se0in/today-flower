@@ -28,7 +28,9 @@ function App() {
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
       <div className="App">
-        <Header />
+        <Header 
+        toggleTheme={toggleTheme} themeMode={themeMode}
+        />
         <div className="content">
           <Routes>
             <Route

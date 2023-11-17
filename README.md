@@ -10,7 +10,7 @@ react로 작업한 오늘의 꽃 (창작)
 
 ### 📅 작업 기간
 - 2023년 11월 10일 ~ 2023년 11월 16일
-- 디자인 1일 , 퍼블리싱 2일, 데이터 연결 4일
+- 디자인 1일 , 퍼블리싱 2일, 데이터 연결 4일 (+피드백 수정 1일)
 
 ### 💻 사용 툴 및 작업 언어
 - Adobe XD (디자인)
@@ -25,7 +25,7 @@ react로 작업한 오늘의 꽃 (창작)
   ##### styled-component 이용한 테마 변경
   |light mode|dark mode|
   |:---:|:---:|
-  |<img src="./public/images/readme/main-light.png" alt="" width="400" />|<img src="./public/images/readme/main-dark.png" alt="" width="400" />|
+  |<img src="./public/images/readme/main-light.png" alt="" width="300" />|<img src="./public/images/readme/main-dark.png" alt="" width="300" />|
   
   #### 검색 및 상세 페이지
   |이름 검색|날짜 검색|상세 페이지|
