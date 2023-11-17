@@ -1,5 +1,5 @@
 # 개인 프로젝트 : 오늘의 꽃 
-✨ 링크 : (https://seoin-today-flower.netlify.app ✨  
+✨ 링크 : https://seoin-today-flower.netlify.app ✨  
 <br>
 react로 작업한 오늘의 꽃 (창작)
 <br>
