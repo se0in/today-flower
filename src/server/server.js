@@ -34,7 +34,6 @@ const fetchDataName = async (searchTerm) => {
         return data;
 
       } else {
-        // console.log('일치하는 꽃이름이 없습니다.');
         return [];
       }
 
