@@ -21,8 +21,8 @@ function Main({ toggleTheme, themeMode }) {
 
   // 오늘 날짜 : 데이터, Link
   const now = new Date();
-  const month = String(now.getMonth() + 1).padStart(2, "0");
-  const day = String(now.getDate()).padStart(2, "0");
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
 
   //데이터 연결
   const fetchFlowerData = useCallback(async () => {
