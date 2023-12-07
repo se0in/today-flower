@@ -26,12 +26,12 @@ react로 작업한 오늘의 꽃 (창작)
   ##### styled-component 이용한 테마 변경
   |light mode|dark mode|
   |:---:|:---:|
-  |<img src="./public/images/readme/main-light.png" alt="" width="300" />|<img src="./public/images/readme/main-dark.png" alt="" width="300" />|
+  |<img src="./public/images/readme/main-light.png" alt="라이트 모드" height="50%" width="70%" />|<img src="./public/images/readme/main-dark.png" alt="다크 모드" height="50%" width="70%" />|
   
   #### 검색 및 상세 페이지
   |이름 검색|날짜 검색|상세 페이지|
   |:---:|:---:|:---:|
-  |<img src="./public/images/readme/search-name.png" alt="" height="500" />|<img src="./public/images/readme/search-date.png" alt="" height="500" />|<img src="./public/images/readme/detail.png" alt="" height="500" />|
+  |<img src="./public/images/readme/search-name.png" alt="이름 검색" height="50%" width="100%" />|<img src="./public/images/readme/search-date.png" alt="날짜 검색" height="50%" width="100%" />|<img src="./public/images/readme/detail.png" alt="상세 페이지" height="50%" width="100%" />|
 
 <br>
 <br>
